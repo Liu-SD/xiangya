@@ -1,0 +1,51 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct 28 11:07:49 2019
+
+@author: LINFANLI
+
+Editt On 2021
+@author: JunJie
+
+"""
+
+# import os
+#import numpy as np
+# import pandas as pd
+# import datetime
+import templates as templates
+import codecs
+# from get_pyecharts import get_pyecharts_geo, get_pyecharts_line, get_pyecharts_heatmap
+# from get_aqi import cal_pm25_iaqi,cal_pm10_iaqi,cal_co_iaqi,cal_no2_iaqi,cal_so2_iaqi
+# import re
+import pdfkit
+
+
+# 获取当前的工作路径
+#print(os.getcwd())
+# 重置工作路径
+# os.chdir(r'E:\Pycharm-Projects\AirQualityReport')
+# E:\Pycharm-Projects\AirQualityReport
+# print(os.getcwd())
+path = '/home/junjie/Code/xiangya/project'
+
+
+diagnosis = "200个字符以内，高脂血症,IGT,高尿酸血症"
+
+med_time = "09:00"
+med_name = "苯扎贝特片"
+med_dosage = "2片"
+med_mode = "口服"
+li_html = templates.template('li.html').render(time= med_time, info = med_name + " " + med_dosage + " " + med_mode)
+li1_html = templates.template('li.html').render(time= med_time, info = med_name + " " + med_dosage + " " + med_mode)
+
+res = templates.template('test.html').render(diagnosis=diagnosis, li_html = li_html + li1_html)
+
+outputfile = path + "/test.html"
+with codecs.open(outputfile, 'w+b', encoding='utf8') as file:
+    file.write(res)
+
+# pdfkit.from_string(res,path + '/out.pdf')
+from weasyprint import HTML
+HTML(string=res).write_pdf(path + '/out.pdf', stylesheets=["/home/junjie/Code/xiangya/project/templates/style.css","/home/junjie/Code/xiangya/project/templates/layui/css/layui.css"])
+# HTML(filename=outputfile).write_pdf(path + '/out1.pdf')

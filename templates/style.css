@@ -5,12 +5,15 @@ body {
   
 }
 
+
 .container ul {
   margin: 0;
-  margin-top: 100px;
+  /* 这是整个ul距离上下 */
+  margin-top: 30px;
+  margin-bottom: 30px;
   list-style: none;
   position: relative;
-  padding: 1px 100px;
+  padding: 1px 50px;
   color: rgb(0, 0, 0);
   font-size: 13px;
 }
@@ -27,7 +30,8 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 14px;
   border-radius: 6px;
-  width: 250px;
+  /* 去掉固定防止出现问题 */
+  /* width: 250px; */
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.08);
 }
 
@@ -110,3 +114,20 @@ input[type=text]::before {
   margin: 0em;
   vertical-align:bottom;
 }
+
+
+
+.box {
+  background-color: #d0e3f57e;
+  /* border: 5px solid #0b385f; */
+  /* border-bottom-style: dashed; */
+  border:2px solid black;
+  padding:20px 20px;
+  border-radius:15px;
+  color: rgb(0, 0, 0);
+}
+
+
+
+
+                

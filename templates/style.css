@@ -11,9 +11,10 @@ body {
   /* 这是整个ul距离上下 */
   margin-top: 30px;
   margin-bottom: 30px;
+  margin-left: 30px;
   list-style: none;
   position: relative;
-  padding: 1px 50px;
+  padding: 1px 10px;
   color: rgb(0, 0, 0);
   font-size: 13px;
 }
@@ -26,9 +27,9 @@ body {
 }
 .container ul li {
   position: relative;
-  margin-left: 30px;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 14px;
+  margin-left: 40px;
+  background-color: #d0e3f57e;
+  padding: 10px;
   border-radius: 6px;
   /* 去掉固定防止出现问题 */
   /* width: 250px; */
@@ -37,14 +38,14 @@ body {
 
 /* 这个是让内容往下移动，也就是让这些之间有间隔的设置 */
 .container ul li:not(:first-child) {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .container ul li > span {
   width: 0px;
   height: 100%;
   background: rgb(0, 0, 0);
-  left: -30px;
+  left: -40px;
   top: 0;
   position: absolute;
 }
@@ -117,17 +118,56 @@ input[type=text]::before {
 
 
 
+/* 中部的两个框 */
 .box {
   background-color: #d0e3f57e;
   /* border: 5px solid #0b385f; */
   /* border-bottom-style: dashed; */
-  border:2px solid black;
-  padding:20px 20px;
-  border-radius:15px;
+  /* border:2px solid black; */
+  padding:10px 10px;
+  border-radius:2px;
   color: rgb(0, 0, 0);
 }
 
+.outlierbox{
+  border:2px solid #a1a1a1;
+  padding:20px 20px;  
+  border-radius:15px;
+  margin: 10px 10px; 
+  min-height: 500px;
+}
+
+.caution_margin{
+  margin: 5px 0px;
+}
 
 
+.wf-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
-                
+.wf-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.wf-text {
+  position: relative!important;
+
+  width: 200px;
+  height: 25px;
+  border: solid rgba(0, 0, 0, 0.8) 1px;
+  border-radius: 3px;
+}
+
+.wf-textarea {
+  position: relative!important;
+
+  width: 500px;
+  height: 300px;
+  border: solid rgba(0, 0, 0, 0.8) 1px;
+  border-radius: 3px;
+}

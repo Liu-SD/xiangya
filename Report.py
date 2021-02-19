@@ -27,8 +27,8 @@ import codecs
 # os.chdir(r'E:\Pycharm-Projects\AirQualityReport')
 # E:\Pycharm-Projects\AirQualityReport
 # print(os.getcwd())
-# path = '/home/junjie/Code/xiangya/project'
-path = "/home/pdluser/Workspace/junjie/xiangya"
+path = '/home/junjie/Code/xiangya/project'
+# path = "/home/pdluser/Workspace/junjie/xiangya"
 
 
 json_data ={
@@ -50,7 +50,7 @@ json_data ={
 	"time_mech": "服用时间需要注意……",
 	"med_forbid": "不能与……同服，否则……",
 	"med_caution": "在……时间内不得超过……",
-	"med_listlist": [{
+	"med_list": [{
 		"med_time": "09:00",
 		"med_name": "苯扎贝特片",
 		"med_dosage": "2片",
@@ -63,16 +63,27 @@ json_data ={
 	}],
 }
 
-diagnosis = "200个字符以内，高脂血症,IGT,高尿酸血症"
+li_html = ""
+for med_item in json_data['med_list']:
+	li_html = li_html + templates.template('li.html').render(time= med_item['med_time'], info = med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode'])
 
-med_time = "09:00"
-med_name = "苯扎贝特片"
-med_dosage = "2片"
-med_mode = "口服"
-li_html = templates.template('li.html').render(time= med_time, info = med_name + " " + med_dosage + " " + med_mode)
-li1_html = templates.template('li.html').render(time= med_time, info = med_name + " " + med_dosage + " " + med_mode)
-
-res = templates.template('test.html').render(diagnosis=diagnosis, li_html = li_html + li1_html)
+res = templates.template('test.html').render(
+	li_html = li_html, 
+	hospital = json_data['hospital'],
+    clinic_id = json_data['clinic_id'],
+    section = json_data['section'],
+    date = json_data['date'],
+    time = json_data['time'],
+    name = json_data['name'],
+    gender = json_data['gender'],
+    birthday = json_data['birthday'],
+    age = json_data['age'],
+    diagnosis = json_data['diagnosis'],
+	user_edu = json_data['user_edu'], 
+	disease_edu = json_data['disease_edu'], 
+	time_mech = json_data['time_mech'], 
+	med_forbid = json_data['med_forbid'], 
+	med_caution = json_data['med_caution'])
 
 # outputfile = path + "/test.html"
 # with codecs.open(outputfile, 'w+b', encoding='utf8') as file:

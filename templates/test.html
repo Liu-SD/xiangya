@@ -15,7 +15,7 @@
 <body>
     <div class="layui-container">
         <div class="layui-row">
-            <h2 style="text-align:center;margin-top: 20px;">中南大学湘雅医院<br>用药指导单</h2>
+            <h2 style="text-align:center;">{{hospital}}<br>用药指导单</h2>
         </div>
 
         <div class="layui-row" style="margin-top: 20px;">
@@ -23,7 +23,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">门诊号：</label>
                     <div class="layui-input-block">
-                        <input type="text" name="{{clinic_id}}" autocomplete="off" class="layui-input">
+                        <input type="text" name="{{clinic_id}}" autocomplete="off" class="layui-input" value={{clinic_id}}>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">科室：</label>
                     <div class="layui-input-block">
-                        <input type="text" name="section" autocomplete="off" class="layui-input">
+                        <input type="text" name="section" autocomplete="off" class="layui-input" value={{section}}>
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">门诊时间：</label>
                     <div class="layui-input-block">
-                        <input type="text" name="date" lay-verify="date" autocomplete="off" class="layui-input">
+                        <input type="text" name="date" lay-verify="date" autocomplete="off" class="layui-input" value={{date}}>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">姓名：</label>
                     <div class="layui-input-block">
-                        <input type="text" name="name" lay-verify="name" autocomplete="off" class="layui-input">
+                        <input type="text" name="name" lay-verify="name" autocomplete="off" class="layui-input" value={{name}}>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">性别：</label>
                     <div class="layui-input-block">
-                        <input type="text" name="gender" lay-verify="gender" autocomplete="off" class="layui-input">
+                        <input type="text" name="gender" lay-verify="gender" autocomplete="off" class="layui-input" value={{gender}}>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">日期：</label>
                     <div class="layui-input-block">
-                        <input type="text" name="birthday" lay-verify="birthday" autocomplete="off" class="layui-input">
+                        <input type="text" name="birthday" lay-verify="birthday" autocomplete="off" class="layui-input" value={{birthday}}>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">年龄：</label>
                     <div class="layui-input-block">
-                        <input type="text" name="age" lay-verify="age" autocomplete="off" class="layui-input">
+                        <input type="text" name="age" lay-verify="age" autocomplete="off" class="layui-input" value={{age}}>
                     </div>
                 </div>
 
@@ -101,10 +101,16 @@
         <div class="layui-row">
             <div class="layui-col-xs6">
                 <p style="margin-left: 25px;">推荐用药时间</p>
-                <div style="
-                border:2px solid #a1a1a1;
-                padding:20px 20px;
-                border-radius:15px;margin: 10px 10px 10px 20px;">
+                <div class="outlierbox" style="margin: 10px 10px 10px 20px;">
+
+                    <div class="layui-row">
+                        <div class="layui-col-xs6">
+                            <p>服药时间</p>
+                        </div>
+                        <div class="layui-col-xs6">
+                            <p>服用的药品</p>
+                        </div>
+                    </div>
 
                     <div class="container">
                         <ul>
@@ -130,18 +136,18 @@
             </div>
 
             <div class="layui-col-xs6">
-                <p>用药注意事项</p>
-                <div style="
-                border:2px solid #a1a1a1;
-                padding:20px 20px;
-                border-radius:15px;margin: 10px 10px ;">
+                <p style="margin-left: 20px;">用药注意事项</p>
+                <div class="outlierbox">
                     <p>患者教育</p>
-                    <p class="box">
-                        口服给药的一般方法为吞服，通过水来保护和润滑食道，促进药物的吸收和排泄。但是有些药物为了加速药效、加快溶解吸收或者减少刺激或副作用，会采取一些特殊的给药方式，如嚼服、含服、舌下含服和泡腾等
-                    </p>
-
-                    <p>患病教育</p>
-                    <p class="box"> 餐中服用或餐后服用可缓解药物引起的胃肠反应</p>
+                    <p class="box caution_margin"> {{user_edu}}</p>
+                    <p>疾病教育</p>
+                    <p class="box caution_margin"> {{disease_edu}}</p>
+                    <p>时辰药理学</p>
+                    <p class="box caution_margin"> {{time_mech}}</p>
+                    <p>禁忌</p>
+                    <p class="box caution_margin"> {{med_forbid}}</p>
+                    <p>注意事项</p>
+                    <p class="box caution_margin">{{med_caution}}</p>
                 </div>
 
             </div>
@@ -157,7 +163,7 @@
                 </div>
             </div>
             <div class="layui-col-xs6" style="text-align:center;">
-                <div style="padding: 0px 100px;">
+                <div style="padding: 0px 90px;">
                     <p class="box">
                         二维码
                     </p>

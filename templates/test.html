@@ -18,90 +18,61 @@
             <h2 style="text-align:center;">{{hospital}}<br>用药指导单</h2>
         </div>
 
-        <div class="layui-row" style="margin-top: 20px;">
+        <div class="layui-row row_margin">
             <div class="layui-col-xs4">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">门诊号：</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="{{clinic_id}}" autocomplete="off" class="layui-input" value={{clinic_id}}>
-                    </div>
-                </div>
+                
+                    <span class = "detail_label">门诊号：</span>
+                    <span class="detail_box">{{clinic_id}}</span>
 
             </div>
             <div class="layui-col-xs4">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">科室：</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="section" autocomplete="off" class="layui-input" value={{section}}>
-                    </div>
-                </div>
+                
+                    <span class = "detail_label">科室：</span>
+                    <span class="detail_box">{{section}}</span>
 
             </div>
             <div class="layui-col-xs4">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">门诊时间：</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="date" lay-verify="date" autocomplete="off" class="layui-input" value={{date}}>
-                    </div>
-                </div>
+                
+                    <span class = "detail_label">门诊时间：</span>
+                    <span class="detail_box">{{date}}</span>
 
             </div>
         </div>
 
-        <div class="layui-row">
+        <div class="layui-row row_margin">
             <div class="layui-col-xs4">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">姓名：</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="name" lay-verify="name" autocomplete="off" class="layui-input" value={{name}}>
-                    </div>
-                </div>
+                    <span class = "detail_label">姓名：</span>
+                    <span class="detail_box">{{name}}</span>
 
             </div>
             <div class="layui-col-xs2">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">性别：</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="gender" lay-verify="gender" autocomplete="off" class="layui-input" value={{gender}}>
-                    </div>
-                </div>
+                
+                    <span class = "detail_label">性别：</span>
+                    <span class="detail_box">{{gender}}</span>
 
             </div>
             <div class="layui-col-xs4">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">日期：</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="birthday" lay-verify="birthday" autocomplete="off" class="layui-input" value={{birthday}}>
-                    </div>
-                </div>
+                
+                    <span class = "detail_label">日期：</span>
+                    <span class="detail_box">{{birthday}}</span>
             </div>
 
             <div class="layui-col-xs2">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">年龄：</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="age" lay-verify="age" autocomplete="off" class="layui-input" value={{age}}>
-                    </div>
-                </div>
+                    <span class = "detail_label">年龄：</span>
+                    <span class="detail_box">{{age}}</span>
 
             </div>
         </div>
 
-        <div class="layui-row">
-            <div class="layui-form-item">
-                <!-- <span>临床诊断：</span><span style="background-color:e5f0ff">{{diagnosis}}</span>     -->
-                <label class="layui-form-label">临床诊断：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="diagnosis1" autocomplete="off" class="layui-input" value={{diagnosis}}>
-                </div>
-            </div>
+        <div class="layui-row row_margin">
+                <span class = "detail_label">临床诊断：</span>
+                <span class="detail_box">{{diagnosis}}</span>
         </div>
 
-
-        <div class="layui-row">
+        <div class="layui-row row_margin">
             <div class="layui-col-xs6">
                 <p style="margin-left: 25px;">推荐用药时间</p>
-                <div class="outlierbox" style="margin: 10px 10px 10px 20px;">
+                <div class="outlierbox" ><!-- style="margin: 10px 10px 10px 20px;" -->
 
                     <div class="layui-row">
                         <div class="layui-col-xs6">
@@ -114,8 +85,10 @@
 
                     <div class="container">
                         <ul>
-                            <!-- {{li_html}} -->
-                            <li><span></span>
+                            {{li_html}}
+                            <!-- <li><span></span>
+                                患者教育
+
                                 <div>
 
                                     <div class="info">Let&apos;s make coolest things in css</div>
@@ -128,7 +101,7 @@
                                     <div class="info">Let&apos;s make coolest things in css</div>
 
                                 </div> <span class="number"><span>10:00</span></span>
-                            </li>
+                            </li> -->
 
                         </ul>
                     </div>
@@ -153,7 +126,7 @@
             </div>
         </div>
 
-        <div class="layui-row" style="margin-top: 20px;">
+        <div class="layui-row row_margin">
             <div class="layui-col-xs6">
                 <div class="layui-form-item">
                     <label class="layui-form-label">医生签字</label>

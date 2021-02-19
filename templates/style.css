@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-body {
+/* body {
   height: 100vh;
   font-family: "Open Sans", sans-serif;
   
-}
+} */
 
 
 .container ul {
@@ -16,7 +16,7 @@ body {
   position: relative;
   padding: 1px 10px;
   color: rgb(0, 0, 0);
-  font-size: 13px;
+  /* font-size: 13px; */
 }
 .container ul:before {
   content: "";
@@ -49,17 +49,18 @@ body {
   top: 0;
   position: absolute;
 }
-/* .container ul li > span:before, .container ul li > span:after {
+.container ul li > span:before {
   content: "";
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid black;
   position: absolute;
-  background: #da1c1c;
+  /* background: #d0e3f57e; */
+  background: black;
   left: -5px;
-  top: 0;
-} */
+  top: 50%;;
+}
 .container ul li span:after {
   top: 100%;
 }
@@ -70,9 +71,9 @@ body {
   font-weight: 600;
   font-size: 12px;
 }
-.container div .info {
+/* .container div .info {
   font-weight: 300;
-}
+} */
 .container div > div {
   margin-top: 5px;
 }
@@ -141,33 +142,27 @@ input[type=text]::before {
   margin: 5px 0px;
 }
 
-
-.wf-top-left {
-  position: absolute;
-  top: 0;
-  left: 0;
+.detail_box {
+  background-color: #d0e3f57e;
+  /* border: 5px solid #0b385f; */
+  /* border-bottom-style: dashed; */
+  border:1px solid black;
+  margin:5px 0px;
+  padding:5px 5px;
+  border-radius:1px;
+  color: rgb(0, 0, 0);
 }
 
-.wf-bottom-right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.detail_label {
+  /* border: 5px solid #0b385f; */
+  /* border-bottom-style: dashed; */
+  /* border:2px solid black; */
+  margin:5px 0px;
+  padding:5px 5px;
+  /* border-radius:1px; */
+  /* color: rgb(0, 0, 0); */
 }
 
-.wf-text {
-  position: relative!important;
-
-  width: 200px;
-  height: 25px;
-  border: solid rgba(0, 0, 0, 0.8) 1px;
-  border-radius: 3px;
-}
-
-.wf-textarea {
-  position: relative!important;
-
-  width: 500px;
-  height: 300px;
-  border: solid rgba(0, 0, 0, 0.8) 1px;
-  border-radius: 3px;
+.row_margin{
+  margin-top: 20px;
 }

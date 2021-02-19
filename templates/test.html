@@ -20,59 +20,71 @@
 
         <div class="layui-row row_margin">
             <div class="layui-col-xs4">
-                
-                    <span class = "detail_label">门诊号：</span>
+                <div class="fillbox">
+                    <span class="detail_label">门诊号：</span>
                     <span class="detail_box">{{clinic_id}}</span>
 
+                </div>
             </div>
             <div class="layui-col-xs4">
-                
-                    <span class = "detail_label">科室：</span>
+                <div class="fillbox">
+
+                    <span class="detail_label">科室：</span>
                     <span class="detail_box">{{section}}</span>
+                </div>
 
             </div>
             <div class="layui-col-xs4">
-                
-                    <span class = "detail_label">门诊时间：</span>
-                    <span class="detail_box">{{date}}</span>
+                <div class="fillbox">
+                    <span class="detail_label">门诊时间：</span>
+                    <span class="detail_box_end">{{date}}</span>
+                </div>
 
             </div>
         </div>
 
-        <div class="layui-row row_margin">
+        <div class="layui-row">
             <div class="layui-col-xs4">
-                    <span class = "detail_label">姓名：</span>
+                <div class="fillbox">
+                    <span class="detail_label">姓名：</span>
                     <span class="detail_box">{{name}}</span>
 
+                </div>
             </div>
             <div class="layui-col-xs2">
-                
-                    <span class = "detail_label">性别：</span>
+                <div class="fillbox">
+
+                    <span class="detail_label">性别：</span>
                     <span class="detail_box">{{gender}}</span>
+                </div>
 
             </div>
             <div class="layui-col-xs4">
-                
-                    <span class = "detail_label">日期：</span>
+                <div class="fillbox">
+                    <span class="detail_label">日期：</span>
                     <span class="detail_box">{{birthday}}</span>
+                </div>
             </div>
 
             <div class="layui-col-xs2">
-                    <span class = "detail_label">年龄：</span>
-                    <span class="detail_box">{{age}}</span>
+                <div class="fillbox">
+                    <span class="detail_label">年龄：</span>
+                    <span class="detail_box_end">{{age}}</span>
 
+                </div>
             </div>
         </div>
 
-        <div class="layui-row row_margin">
-                <span class = "detail_label">临床诊断：</span>
-                <span class="detail_box">{{diagnosis}}</span>
+        <div class="layui-row fillbox">
+            <span class="detail_label">临床诊断：</span>
+            <span class="detail_box_end">{{diagnosis}}</span>
         </div>
 
         <div class="layui-row row_margin">
             <div class="layui-col-xs6">
                 <p style="margin-left: 25px;">推荐用药时间</p>
-                <div class="outlierbox" ><!-- style="margin: 10px 10px 10px 20px;" -->
+                <div class="outlierbox">
+                    <!-- style="margin: 10px 10px 10px 20px;" -->
 
                     <div class="layui-row">
                         <div class="layui-col-xs6">

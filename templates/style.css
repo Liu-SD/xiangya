@@ -28,7 +28,7 @@
 .container ul li {
   position: relative;
   margin-left: 40px;
-  background-color: #d0e3f57e;
+  background-color: rgb(231, 240, 247);
   padding: 10px;
   border-radius: 6px;
   /* 去掉固定防止出现问题 */
@@ -121,7 +121,7 @@ input[type=text]::before {
 
 /* 中部的两个框 */
 .box {
-  background-color: #d0e3f57e;
+  background-color: rgb(231, 240, 247);
   /* border: 5px solid #0b385f; */
   /* border-bottom-style: dashed; */
   /* border:2px solid black; */
@@ -142,15 +142,29 @@ input[type=text]::before {
   margin: 5px 0px;
 }
 
+
 .detail_box {
-  background-color: #d0e3f57e;
+  background-color: rgb(231, 240, 247);
+  /* border: 5px solid #0b385f; */
+  /* border-bottom-style: dashed; */
+  border:1px solid black;
+  margin:5px 10px 5px 0px;
+  padding:5px 5px 5px 5px;
+  border-radius:1px;
+  color: rgb(0, 0, 0);
+  flex-grow : 1;
+}
+
+.detail_box_end{
+  background-color: rgb(231, 240, 247);
   /* border: 5px solid #0b385f; */
   /* border-bottom-style: dashed; */
   border:1px solid black;
   margin:5px 0px;
-  padding:5px 5px;
+  padding:5px 5px 5px 5px;
   border-radius:1px;
   color: rgb(0, 0, 0);
+  flex-grow : 1;
 }
 
 .detail_label {
@@ -165,4 +179,8 @@ input[type=text]::before {
 
 .row_margin{
   margin-top: 20px;
+}
+
+.fillbox{
+  display: flex;
 }

@@ -14,17 +14,23 @@
   margin-left: 30px;
   list-style: none;
   position: relative;
-  padding: 1px 10px;
+  /* padding: 1px 10px; */
+  padding: 1px 1px 1px 10px;;
   color: rgb(0, 0, 0);
   /* font-size: 13px; */
 }
+
+/* 这里用来操作竖直的线条的性质 */
 .container ul:before {
   content: "";
   width: 2px;
   height: 100%;
+  margin-left: 20px;
   position: absolute;
   border-left: 2px solid rgb(0, 0, 0);
 }
+
+/* 看作表格，每个条目的移动，这里先left移动之后，再把时间和点设置为负数，给到对应的位置 */
 .container ul li {
   position: relative;
   margin-left: 40px;
@@ -38,14 +44,14 @@
 
 /* 这个是让内容往下移动，也就是让这些之间有间隔的设置 */
 .container ul li:not(:first-child) {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .container ul li > span {
   width: 0px;
   height: 100%;
   background: rgb(0, 0, 0);
-  left: -40px;
+  left: -30px;
   top: 0;
   position: absolute;
 }
@@ -58,7 +64,7 @@
   position: absolute;
   /* background: #d0e3f57e; */
   background: black;
-  left: -5px;
+  left: 5px;
   top: 50%;;
 }
 .container ul li span:after {

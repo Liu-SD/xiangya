@@ -17,6 +17,7 @@ import templates as templates
 import codecs
 import sys
 import uuid
+import collections
 # from get_pyecharts import get_pyecharts_geo, get_pyecharts_line, get_pyecharts_heatmap
 # from get_aqi import cal_pm25_iaqi,cal_pm10_iaqi,cal_co_iaqi,cal_no2_iaqi,cal_so2_iaqi
 # import re
@@ -35,8 +36,17 @@ path = sys.path[0]
 
 def json2pdf(json_data):
 	li_html = ""
+	dic = collections.OrderedDict()
 	for med_item in json_data['med_list']:
-		li_html = li_html + templates.template('li.html').render(time= med_item['med_time'], info = med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode'])
+		index = med_item['med_time']
+		if(dic.get(index) != None):
+			dic[index] = dic[index] + "<br>"
+			dic[index] = dic[index] + med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
+		else:
+			dic[index] = med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
+
+	for k,v in dic.items():
+		li_html = li_html + templates.template('li.html').render(time= k, info = v)
 
 	res = templates.template('test.html').render(
 		li_html = li_html, 
@@ -61,8 +71,8 @@ def json2pdf(json_data):
 	#     file.write(res)
 
 	# pdfkit.from_string(res,path + '/out.pdf')
-	file_name = '%s.pdf' %  str(uuid.uuid4())
-	# file_name = "out.pdf"
+	# file_name = '%s.pdf' %  str(uuid.uuid4())
+	file_name = "out.pdf"
 	res_path = path + "/pdfs/" + file_name
 	from weasyprint import HTML
 	HTML(string=res).write_pdf(res_path, stylesheets=[path + "/templates/style.css",path+"/templates/layui/css/layui.css"])
@@ -99,6 +109,11 @@ if __name__ == "__main__":
 		}, {
 			"med_time": "09:00",
 			"med_name": "苯扎贝特片",
+			"med_dosage": "2片",
+			"med_mode": "口服"
+		}, {
+			"med_time": "13:00",
+			"med_name": "苯片",
 			"med_dosage": "2片",
 			"med_mode": "口服"
 		}],

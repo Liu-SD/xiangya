@@ -1,4 +1,5 @@
 import requests
+import json
 
 json_data ={
 		"code": 200,
@@ -32,6 +33,16 @@ json_data ={
 		}],
 	}
 
-res = requests.post('http://localhost:5000/api/json2pdf', json=json_data)
+# json方法一
+res = requests.post('http://localhost:5000/api/json2pdf', json=json_data) 
+
+
+# json 方法二
+## headers中添加上content-type这个参数，指定为json格式
+headers = {'Content-Type': 'application/json'}
+
+## post的时候，将data字典形式的参数用json包转换成json格式。
+response = requests.post(url='http://localhost:5000/api/json2pdf', headers=headers, data=json.dumps(json_data))
+
 if res.ok:
     print(res.json())

@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/api/json2pdf', methods=['GET', 'POST'])
 def index():
-    content = request.json
+    content = request.json #request.json会自动将json数据转换成Python类型（字典或者列表）
 
     try:
         path = json2pdf(content)

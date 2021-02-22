@@ -34,6 +34,7 @@ import collections
 # path = "/home/pdluser/Workspace/junjie/xiangya"
 path = sys.path[0] 
 
+
 def json2pdf(json_data):
 	li_html = ""
 	dic = collections.OrderedDict()
@@ -60,19 +61,20 @@ def json2pdf(json_data):
 		birthday = json_data['birthday'],
 		age = json_data['age'],
 		diagnosis = json_data['diagnosis'],
-		user_edu = json_data['user_edu'], 
-		disease_edu = json_data['disease_edu'], 
-		time_mech = json_data['time_mech'], 
-		med_forbid = json_data['med_forbid'], 
-		med_caution = json_data['med_caution'])
+		# 处理用药注意事项中可能没有内容的情况
+		user_edu = json_data.get('user_edu', ""), 
+		disease_edu = json_data.get('disease_edu', ""), 
+		time_mech = json_data.get('time_mech', ""), 
+		med_forbid = json_data.get('med_forbid', ""), 
+		med_caution = json_data.get('med_caution', ""))
 
 	# outputfile = path + "/test.html"
 	# with codecs.open(outputfile, 'w+b', encoding='utf8') as file:
 	#     file.write(res)
-
 	# pdfkit.from_string(res,path + '/out.pdf')
-	# file_name = '%s.pdf' %  str(uuid.uuid4())
-	file_name = "out.pdf"
+
+	file_name = '%s.pdf' %  str(uuid.uuid4())
+	# file_name = "out.pdf"
 	res_path = path + "/pdfs/" + file_name
 	from weasyprint import HTML
 	HTML(string=res).write_pdf(res_path, stylesheets=[path + "/templates/style.css",path+"/templates/layui/css/layui.css"])

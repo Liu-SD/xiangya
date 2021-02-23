@@ -35,6 +35,17 @@ import collections
 path = sys.path[0] 
 
 
+def sort_key(old_dict, reverse=False):
+    """对字典按key排序, 默认升序, 不修改原先字典"""
+    # 先获得排序后的key列表
+    keys = sorted(old_dict.keys(), reverse=reverse)
+    # 创建一个新的空字典
+    new_dict = collections.OrderedDict()
+    # 遍历 key 列表
+    for key in keys:
+        new_dict[key] = old_dict[key]
+    return new_dict
+
 def json2pdf(json_data):
 	li_html = ""
 	dic = collections.OrderedDict()
@@ -46,6 +57,7 @@ def json2pdf(json_data):
 		else:
 			dic[index] = med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
 
+	dic = sort_key(dic)
 	for k,v in dic.items():
 		li_html = li_html + templates.template('li.html').render(time= k, info = v)
 
@@ -104,7 +116,7 @@ if __name__ == "__main__":
 		"med_forbid": "不能与……同服，否则……",
 		"med_caution": "在……时间内不得超过……",
 		"med_list": [{
-			"med_time": "09:00",
+			"med_time": "18:00",
 			"med_name": "苯扎贝特片",
 			"med_dosage": "2片",
 			"med_mode": "口服"

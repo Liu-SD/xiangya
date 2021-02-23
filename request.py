@@ -21,20 +21,25 @@ json_data ={
 		"med_forbid": "不能与……同服，否则……",
 		"med_caution": "在……时间内不得超过……",
 		"med_list": [{
-			"med_time": "09:00",
+			"med_time": "18:00",
 			"med_name": "苯扎贝特片",
 			"med_dosage": "2片",
 			"med_mode": "口服"
 		}, {
-			"med_time": "09:00",
+			"med_time": "10:00",
 			"med_name": "苯扎贝特片",
 			"med_dosage": "2片",
+			"med_mode": "口服"
+		}, {
+			"med_time": "10:00",
+			"med_name": "复方铝酸铋",
+			"med_dosage": "1片",
 			"med_mode": "口服"
 		}],
 	}
 
-# json方法一
-res = requests.post('http://localhost:5000/api/json2pdf', json=json_data) 
+# # json方法一
+# res = requests.post('http://localhost:5000/api/json2pdf', json=json_data) 
 
 
 # json 方法二
@@ -44,5 +49,5 @@ headers = {'Content-Type': 'application/json'}
 ## post的时候，将data字典形式的参数用json包转换成json格式。
 response = requests.post(url='http://localhost:5000/api/json2pdf', headers=headers, data=json.dumps(json_data))
 
-if res.ok:
-    print(res.json())
+if response.ok:
+    print(response.json())

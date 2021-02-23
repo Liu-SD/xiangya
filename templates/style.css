@@ -143,7 +143,7 @@ input[type=text]::before {
   border-radius:15px;
   margin-top: 10px;
   margin-bottom: 10px;
-  min-height: 550px;
+  min-height: 500px;
 }
 
 .caution_margin{

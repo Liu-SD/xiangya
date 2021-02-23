@@ -18,6 +18,9 @@ import codecs
 import sys
 import uuid
 import collections
+import qrcode
+import base64
+from io import BytesIO
 # from get_pyecharts import get_pyecharts_geo, get_pyecharts_line, get_pyecharts_heatmap
 # from get_aqi import cal_pm25_iaqi,cal_pm10_iaqi,cal_co_iaqi,cal_no2_iaqi,cal_so2_iaqi
 # import re
@@ -46,6 +49,15 @@ def sort_key(old_dict, reverse=False):
         new_dict[key] = old_dict[key]
     return new_dict
 
+# 转换为二维码，然后转换为base64
+def url_to_qrcode(res_path):
+    img = qrcode.make(data=res_path)
+    output_buffer = BytesIO()
+    img.save(output_buffer, format='JPEG')
+    byte_data = output_buffer.getvalue()
+    base64_str = base64.b64encode(byte_data)
+    return base64_str.decode("utf-8")
+
 def json2pdf(json_data):
 	li_html = ""
 	dic = collections.OrderedDict()
@@ -60,6 +72,12 @@ def json2pdf(json_data):
 	dic = sort_key(dic)
 	for k,v in dic.items():
 		li_html = li_html + templates.template('li.html').render(time= k, info = v)
+
+	file_name = '%s.pdf' %  str(uuid.uuid4())
+	# file_name = "out.pdf"
+	res_path = path + "/pdfs/" + file_name
+
+	img_base64_data = url_to_qrcode(res_path)
 
 	res = templates.template('test.html').render(
 		li_html = li_html, 
@@ -78,18 +96,17 @@ def json2pdf(json_data):
 		disease_edu = json_data.get('disease_edu', ""), 
 		time_mech = json_data.get('time_mech', ""), 
 		med_forbid = json_data.get('med_forbid', ""), 
-		med_caution = json_data.get('med_caution', ""))
+		med_caution = json_data.get('med_caution', ""),
+		img_base64_data = img_base64_data)
 
+	# 保存渲染后的html
 	# outputfile = path + "/test.html"
 	# with codecs.open(outputfile, 'w+b', encoding='utf8') as file:
 	#     file.write(res)
 	# pdfkit.from_string(res,path + '/out.pdf')
 
-	file_name = '%s.pdf' %  str(uuid.uuid4())
-	# file_name = "out.pdf"
-	res_path = path + "/pdfs/" + file_name
 	from weasyprint import HTML
-	HTML(string=res).write_pdf(res_path, stylesheets=[path + "/templates/style.css",path+"/templates/layui/css/layui.css"])
+	HTML(string=res).write_pdf(res_path, stylesheets=[path + "/templates/style.css",path+"/templates/layui/css/layui.css"], presentational_hints=True)
 	# HTML(filename=outputfile).write_pdf(path + '/out1.pdf')
 	return res_path
 	

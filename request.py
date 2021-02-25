@@ -47,7 +47,7 @@ json_data ={
 headers = {'Content-Type': 'application/json'}
 
 ## post的时候，将data字典形式的参数用json包转换成json格式。
-response = requests.post(url='http://localhost:5000/api/json2pdf', headers=headers, data=json.dumps(json_data))
+response = requests.post(url='http://localhost:12333/api/json2pdf', headers=headers, data=json.dumps(json_data))
 
 if response.ok:
     print(response.json())

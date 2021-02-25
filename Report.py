@@ -21,6 +21,7 @@ import collections
 import qrcode
 import base64
 from io import BytesIO
+# from app import ip, port
 # from get_pyecharts import get_pyecharts_geo, get_pyecharts_line, get_pyecharts_heatmap
 # from get_aqi import cal_pm25_iaqi,cal_pm10_iaqi,cal_co_iaqi,cal_no2_iaqi,cal_so2_iaqi
 # import re
@@ -58,7 +59,7 @@ def url_to_qrcode(res_path):
     base64_str = base64.b64encode(byte_data)
     return base64_str.decode("utf-8")
 
-def json2pdf(json_data):
+def json2pdf(json_data, ip, port):
 	li_html = ""
 	dic = collections.OrderedDict()
 	for med_item in json_data['med_list']:
@@ -77,7 +78,8 @@ def json2pdf(json_data):
 	# file_name = "out.pdf"
 	res_path = path + "/pdfs/" + file_name
 
-	img_base64_data = url_to_qrcode(res_path)
+	res_download_path = ip + ":" + str(port) + "/pdfs/" + file_name
+	img_base64_data = url_to_qrcode(res_download_path)
 
 	res = templates.template('test.html').render(
 		li_html = li_html, 
@@ -108,11 +110,14 @@ def json2pdf(json_data):
 	from weasyprint import HTML
 	HTML(string=res).write_pdf(res_path, stylesheets=[path + "/templates/style.css",path+"/templates/layui/css/layui.css"], presentational_hints=True)
 	# HTML(filename=outputfile).write_pdf(path + '/out1.pdf')
-	return res_path
+	return res_download_path
 	
 
 
 if __name__ == "__main__":
+	ip = "106.12.125.175" 
+	port = 12333
+
 	json_data ={
 		"code": 200,
 		"msg": "访问成功",
@@ -150,5 +155,5 @@ if __name__ == "__main__":
 		}],
 	}
 
-	print(json2pdf(json_data))
+	print(json2pdf(json_data, ip , port))
 	pass

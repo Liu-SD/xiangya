@@ -20,6 +20,7 @@ import uuid
 import collections
 import qrcode
 import base64
+import time
 from io import BytesIO
 # from app import ip, port
 # from get_pyecharts import get_pyecharts_geo, get_pyecharts_line, get_pyecharts_heatmap
@@ -64,6 +65,9 @@ def json2pdf(json_data, ip, port):
 	dic = collections.OrderedDict()
 	for med_item in json_data['med_list']:
 		index = med_item['med_time']
+		index = time.strptime(index , "%H:%M")
+		index = time.strftime("%H:%M", index)
+		
 		if(dic.get(index) != None):
 			dic[index] = dic[index] + "<br>"
 			dic[index] = dic[index] + med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
@@ -143,7 +147,7 @@ if __name__ == "__main__":
 			"med_dosage": "2片",
 			"med_mode": "口服"
 		}, {
-			"med_time": "09:00",
+			"med_time": "8:00",
 			"med_name": "苯扎贝特片",
 			"med_dosage": "2片",
 			"med_mode": "口服"

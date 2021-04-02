@@ -100,9 +100,11 @@ def json2pdf(json_data, ip, port):
 		# 处理用药注意事项中可能没有内容的情况
 		user_edu = json_data.get('user_edu', ""), 
 		disease_edu = json_data.get('disease_edu', ""), 
-		time_mech = json_data.get('time_mech', ""), 
+		# time_mech = json_data.get('time_mech', ""), 
 		med_forbid = json_data.get('med_forbid', ""), 
 		med_caution = json_data.get('med_caution', ""),
+		med_food = json_data.get('med_food', ""), 
+		med_disease = json_data.get('med_disease', ""), 
 		img_base64_data = img_base64_data)
 
 	# 保存渲染后的html
@@ -138,9 +140,11 @@ if __name__ == "__main__":
 		"doctor": "余国龙",
 		"user_edu": "口服给药的一般方法为吞服，通过水来保护和润滑食道，促进药物的吸收和排泄。但是有些药物为了加速药效、加快溶解吸收或者减少刺激或副作用，会采取一些特殊的给药方式，如嚼服、含服、舌下含服和泡腾等",
 		"disease_edu": "餐中服用或餐后服用可缓解药物引起的胃肠反应",
-		"time_mech": "服用时间需要注意……",
+		# "time_mech": "服用时间需要注意……",
 		"med_forbid": "不能与……同服，否则……",
 		"med_caution": "在……时间内不得超过……",
+		"med_food":"不能吃……",
+		"med_disease":"……病有……风险",
 		"med_list": [{
 			"med_time": "18:00",
 			"med_name": "苯扎贝特片",

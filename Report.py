@@ -69,7 +69,8 @@ def json2pdf(json_data, ip, port):
 		index = time.strftime("%H:%M", index)
 		
 		if(dic.get(index) != None):
-			dic[index] = dic[index] + "<br>"
+			# dic[index] = dic[index] + "<br>"
+			dic[index] = dic[index] + " ;  "
 			dic[index] = dic[index] + med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
 		else:
 			dic[index] = med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
@@ -125,98 +126,105 @@ if __name__ == "__main__":
 	port = 12333
 
 	json_data ={
-		"code": 200,
-		"msg": "访问成功",
-		"hospital": "中南大学湘雅医院",
-		"clinic_id": "0008374568",
-		"section": "心血管内科",
-		"date": "2020-8-11",
-		"time": "15:44",
-		"name": "张广杰",
-		"gender": "男",
-		"birthday": "1982-2-7",
-		"age": "38岁",
-		"diagnosis": "200个字符以内，高脂血症,IGT,高尿酸血症",
-		"doctor": "余国龙",
-		"user_edu": "口服给药的一般方法为吞服，通过水来保护和润滑食道，促进药物的吸收和排泄。但是有些药物为了加速药效、加快溶解吸收或者减少刺激或副作用，会采取一些特殊的给药方式，如嚼服、含服、舌下含服和泡腾等",
-		"disease_edu": "餐中服用或餐后服用可缓解药物引起的胃肠反应",
-		# "time_mech": "服用时间需要注意……",
-		"med_forbid": "不能与……同的给药方式，如嚼服、含服、舌下含服和泡腾等",
-		"med_caution": "在……时间内不得超过……口服给药的一般方法为吞服，通过水来保护和润滑食道，促进药物的吸收和排泄。但是有些药物为了加速药效、加快溶解吸收或者减少刺激或副作用，会采取一些特殊的给药方式，如嚼服、含服、舌下含服和泡腾等在……时间内不得超过……口服给药的一般方法为吞服，通过水来保护和润滑食道，促进药物的吸收和排泄。但是有些药物为了加速药效、加快溶解",
-		"med_food":"不能吃……，会采取一些特殊的给药方式，如嚼服、含服、舌下含服和泡腾等在……时间内不得超过……口服给药的一般方法为吞服，通过水来保护和润滑食道，促进药物，通过",
-		"med_disease":"……病有……风险在……时间内不得超过……口服给药的一般方法为吞服，通过水来保护和润滑食道，促进药物的吸收和排泄。但是有些药物为了加速药效、加快溶解吸收或者减少刺激或副作用，会采取一些特殊的给药方式，如嚼服、含服、舌下含服和泡腾等在……时间内不得超过……口服给药的一般方法为吞服，通过水来保护和润滑食道，促进药物的吸收和排泄。但是有些药物为了加速药效、加快溶解",
-		"med_food":"不能吃……，会采取一些特殊的给",
-		"med_list": [{
-			"med_time": "18:00",
-			"med_name": "苯扎贝特片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		}, {
-			"med_time": "8:00",
-			"med_name": "苯扎贝特片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		}, {
-			"med_time": "13:00",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "19:00",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "22:00",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "21:30",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "16:20",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "14:10",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "18:10",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "19:40",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "18:10",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "19:40",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "18:10",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		},{
-			"med_time": "19:40",
-			"med_name": "苯片",
-			"med_dosage": "2片",
-			"med_mode": "口服"
-		}],
+	"code": "200",
+	"msg": "Test Msg",
+	"hospital": "中南大学湘雅医院",
+	"clinic_id": "0009131453",
+	"section": "神经内科",
+	"date": "020-08-11",
+	"time": "15:33",
+	"name": "杨菊香",
+	"gender": "女",
+	"birthday": "1961-07-25",
+	"age": "59岁",
+	"diagnosis": "帕金森氏病?",
+	"doctor": "王俊峙",
+	"user_edu": "用药咨询建议患者报告精神病行为、抑郁症或自杀意念的症状[3] [1] [2]。因为该药可能导致嗜睡和突然的睡眠，警告患者直到药物疗效发挥完全，避免开车或其他需要精神警",
+	"disease_edu": "用于治疗帕金森病、症状性帕金森综合症（脑炎后、动脉硬化性或中毒性），但不包括药物引起的帕金森综合症。\n\r\n\r\n",
+	"med_forbid": "本品禁用于已知对左旋多巴、苄丝肼或其赋型剂过敏的患者。禁止将本品与非选择性单胺氧化酶抑制剂合用，但选择性单胺氧化酶 B 抑制剂（如司来吉兰和雷沙吉兰）和选择性单胺氧化酶 A 抑制剂（如吗氯贝胺）则不在禁止合用之列。合用单胺氧化酶 A 与单胺氧化酶 B 抑制剂相当于非选择性单胺氧化酶抑制剂，因而不应与本品联合应用。",
+	"med_caution": "本品若与拟交感神经药物（如肾上腺素，去甲肾上腺素，异丙肾上腺素，安非他命等）同时使用，可能会增强这类药物作用，故不推荐与拟交感神经药物的联合用药。如果必须联合用药，必须密切监视心血管系统，且拟交感神经药物的剂量需要减少。\n其他抗帕金森药物可与本品联合用药。",
+	"med_food": "如正在接受其他抗帕金森药物的治疗（如抗胆碱能类或金刚烷胺），在本品初始治疗时应持续用药。但随着本品逐渐起效，其他药物的剂量可能需要减少或逐渐停用。\n",
+	"med_disease": "曾患有冠状动脉疾病、心肌梗塞、心律失常或心力衰竭的患者使用本品时应格外注意。",
+	"med_list": [
+		{
+		"med_time": "8:00",
+		"med_name": "多巴丝肼片",
+		"med_dosage": "0.25g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "13:00",
+		"med_name": "多巴丝肼片",
+		"med_dosage": "0.25g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "19:00",
+		"med_name": "多巴丝肼片",
+		"med_dosage": "0.25g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "7:00",
+		"med_name": "盐酸普拉克索片",
+		"med_dosage": "0.125mg",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "12:00",
+		"med_name": "盐酸普拉克索片",
+		"med_dosage": "0.125mg",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "19:00",
+		"med_name": "盐酸普拉克索片",
+		"med_dosage": "0.125mg",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "7:00",
+		"med_name": "恩他卡朋片",
+		"med_dosage": "0.2g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "11:00",
+		"med_name": "恩他卡朋片",
+		"med_dosage": "0.2g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "17:00",
+		"med_name": "恩他卡朋片",
+		"med_dosage": "0.2g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "7:00",
+		"med_name": "苯扎贝特片",
+		"med_dosage": "0.2g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "8:00",
+		"med_name": "血脂康胶囊",
+		"med_dosage": "0.6g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "19:00",
+		"med_name": "血脂康胶囊",
+		"med_dosage": "0.6g",
+		"med_mode": "口服"
+		},
+		{
+		"med_time": "7:00",
+		"med_name": "非布司他片",
+		"med_dosage": "40.0mg",
+		"med_mode": "口服"
+		}
+	]
 	}
 
 	print(json2pdf(json_data, ip , port))

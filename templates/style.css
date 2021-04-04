@@ -140,11 +140,10 @@ input[type=text]::before {
 .outlierbox{
   border:2px solid #a1a1a1;
   padding:20px 20px;  
-  border-radius:15px;
+  border-radius:10px;
   margin-top: 10px;
   margin-bottom: 10px;
   /* min-height: 500px; */
-  height: 500px;
   overflow: hidden;
 }
 

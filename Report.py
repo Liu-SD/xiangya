@@ -63,6 +63,7 @@ def url_to_qrcode(res_path):
 def json2pdf(json_data, ip, port):
 	li_html = ""
 	dic = collections.OrderedDict()
+	dic_count = collections.OrderedDict()
 	for med_item in json_data['med_list']:
 		index = med_item['med_time']
 		index = time.strptime(index , "%H:%M")
@@ -70,14 +71,34 @@ def json2pdf(json_data, ip, port):
 		
 		if(dic.get(index) != None):
 			# dic[index] = dic[index] + "<br>"
-			dic[index] = dic[index] + " ;  "
-			dic[index] = dic[index] + med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
+			# dic[index] = dic[index] + " ;  "
+			dic[index] = dic[index] + "<br>" +  med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
+			dic_count[index] += 1
 		else:
 			dic[index] = med_item['med_name'] + " " + med_item['med_dosage'] + " " + med_item['med_mode']
+			dic_count[index] = 1
 
 	dic = sort_key(dic)
+
+	sum_t = 1
+	threshold = 27
+	li_html_append = ""
+	# 判断条目的数量，超过一定内容，就划分为两部分
 	for k,v in dic.items():
-		li_html = li_html + templates.template('li.html').render(time= k, info = v)
+		# print(dic_count[k])
+	
+		if sum_t <= threshold:
+			li_html = li_html + templates.template('li.html').render(time= k, info = v)
+		else:
+			li_html_append = li_html_append + templates.template('li.html').render(time= k, info = v)
+		sum_t += dic_count[k] + 2
+	
+	sum_t -= 2
+	# print(sum_t)
+	append_html = ""
+	if sum_t > threshold:
+		append_html = templates.template('append_li.html').render(append_html = li_html_append)
+		
 
 	file_name = '%s.pdf' %  str(uuid.uuid4())
 	# file_name = "out.pdf"
@@ -88,6 +109,7 @@ def json2pdf(json_data, ip, port):
 
 	res = templates.template('test.html').render(
 		li_html = li_html, 
+		append_html = append_html,
 		hospital = json_data['hospital'],
 		clinic_id = json_data['clinic_id'],
 		section = json_data['section'],

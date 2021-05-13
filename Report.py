@@ -121,13 +121,13 @@ def json2pdf(json_data, ip, port):
 		age = json_data['age'],
 		diagnosis = json_data['diagnosis'],
 		# 处理用药注意事项中可能没有内容的情况
-		user_edu = json_data.get('user_edu', ""), 
-		disease_edu = json_data.get('disease_edu', ""), 
+		user_edu = json_data.get('user_edu', "").strip("\n").replace("\r\n", " ").replace("\n", "<br>"), 
+		disease_edu = json_data.get('disease_edu', "").strip("\n").replace("\r\n", " ").replace("\n", "<br>"), 
 		# time_mech = json_data.get('time_mech', ""), 
-		med_forbid = json_data.get('med_forbid', ""), 
-		med_caution = json_data.get('med_caution', ""),
-		med_food = json_data.get('med_food', ""), 
-		med_disease = json_data.get('med_disease', ""), 
+		med_forbid = json_data.get('med_forbid', "").strip("\n").replace("\r\n", " ").replace("\n", "<br>"), 
+		med_caution = json_data.get('med_caution', "").strip("\n").replace("\r\n", " ").replace("\n", "<br>"),
+		med_food = json_data.get('med_food', "").strip("\n").replace("\r\n", " ").replace("\n", "<br>"), 
+		med_disease = json_data.get('med_disease', "").strip("\n").replace("\r\n", " ").replace("\n", "<br>"), 
 		img_base64_data = img_base64_data)
 
 	# 保存渲染后的html

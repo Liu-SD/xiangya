@@ -64,6 +64,7 @@ def json2pdf(json_data, ip, port):
 	li_html = ""
 	dic = collections.OrderedDict()
 	dic_count = collections.OrderedDict()
+	# 利用map合并同一时间点的药品并计数
 	for med_item in json_data['med_list']:
 		index = med_item['med_time']
 		index = time.strptime(index , "%H:%M")
@@ -94,7 +95,6 @@ def json2pdf(json_data, ip, port):
 		sum_t += dic_count[k] + 2
 	
 	sum_t -= 2
-	# print(sum_t)
 	append_html = ""
 	if sum_t > threshold:
 		append_html = templates.template('append_li.html').render(append_html = li_html_append)
@@ -106,7 +106,8 @@ def json2pdf(json_data, ip, port):
 
 	res_download_path = ip + ":" + str(port) + "/pdfs/" + file_name
 	img_base64_data = url_to_qrcode(res_download_path)
-
+	
+	# 整个输出模版渲染
 	res = templates.template('test.html').render(
 		li_html = li_html, 
 		append_html = append_html,

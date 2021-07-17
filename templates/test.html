@@ -8,12 +8,12 @@
     <title>用药指导单</title>
 
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
-    <link rel="stylesheet" href="/home/junjie/Code/xiangya/project/templates/style.css">
-    <link rel="stylesheet" href="/home/junjie/Code/xiangya/project/templates/layui/css/layui.css">
+    <link rel="stylesheet" href="/home/liu/xiangya/templates/style.css">
+    <link rel="stylesheet" href="/home/liu/xiangya/templates/layui/css/layui.css">
 </head>
 
 
-<body style="font-size:15px;">
+<body style="font-size:16px;">
     <div class="layui-container">
         <div class="layui-row">
             <h2 style="text-align:center;">{{hospital}}<br>用药指导单</h2>
@@ -84,15 +84,15 @@
         <div class="layui-row row_margin" >
             <div class="layui-col-xs12">
                 <p style="margin-left: 25px;">推荐用药时间</p>
-                <div class="outlierbox" style="margin-left: 5px;margin-right:10px;height: 600px;">
+                <div class="outlierbox" style="height: 600px;">
                     <!-- style="margin: 10px 10px 10px 20px;" -->
 
                     <div class="layui-row">
                         <div class="layui-col-xs6">
-                            <p>服药时间</p>
+                            <p>建议服药时间</p>
                         </div>
                         <div class="layui-col-xs6">
-                            <p>服用的药品</p>
+                            <p>药品用法及用量</p>
                         </div>
                     </div>
 
@@ -123,25 +123,15 @@
         </div>
 
         {{append_html}}
-        
+
         <div class="layui-row">
             <div class="layui-col-xs12">
                 <p style="margin-left: 25px;">用药注意事项</p>
-                <div class="outlierbox" style="margin-left:5px;margin-right:10px;height: 700px;">
-                    <p>患者教育</p>
-                    <p class="box caution_margin"> {{user_edu}}</p>
-                    <p>疾病教育</p>
-                    <p class="box caution_margin"> {{disease_edu}}</p>
-                    <!-- <p>时辰药理学</p>
-                    <p class="box caution_margin"> {{time_mech}}</p> -->
-                    <p>禁忌</p>
-                    <p class="box caution_margin"> {{med_forbid}}</p>
-                    <p>注意事项</p>
-                    <p class="box caution_margin">{{med_caution}}</p>
-                    <p>食物相互作用</p>
-                    <p class="box caution_margin">{{med_food}}</p>
-                    <p>疾病相互作用</p>
-                    <p class="box caution_margin">{{med_disease}}</p>
+                <div class="outlierbox" style="height: 700px;font-size: 18.7px;">
+                    {% for key, value in educations%}
+                    <p>{{key}}</p>
+                    <p class="box caution_margin">{{value}}</p>
+                    {% endfor %}
                 </div>
 
             </div>

@@ -1,5 +1,18 @@
 <li><span></span>
     <div>
-      <div class="info">{{info}}</div>
-    </div> <span class="number"><span class="point">{{time}}</span></span>
+      <div class="info">
+          {% for med_name, med_spec, med_dosage, med_mode in info %}
+          <div class="layui-row" style="height: 18px;">
+              <div class="layui-col-xs8"><b>{{med_name}}</b></div>
+              <div class="layui-col-xs2">{{med_spec}}</div>
+              <div class="layui-col-xs1"><b>{{med_dosage}}</b></div>
+              <div class="layui-col-xs1">{{med_mode}}</div>
+          </div>
+          {% endfor %}
+      </div>
+    </div>
+    <span class="number">
+        <span class="point">{{time}}</span>
+        <span class="timestamp">{{timestamp}}</span>
+    </span>
 </li>

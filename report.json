@@ -1,0 +1,154 @@
+{
+  "hospital": "中南大学湘雅医院",
+  "clinic_id": "0009131453",
+  "section": "神经内科",
+  "date": "020-08-11",
+  "time": "15:33",
+  "name": "杨菊香",
+  "gender": "女",
+  "birthday": "1961-07-25",
+  "age": "59岁",
+  "diagnosis": "帕金森氏病?",
+  "doctor": "王俊峙",
+  "user_edu": "盐酸坦索罗辛缓释胶囊\r\n1.遵医嘱用药。饭后30分钟，每天同一时间服用本药。\n2.快速变换姿势须注意，较易产生晕眩之不适。\n3.有可能出现眩晕等，因此从事高空作业、汽车驾驶等伴有危险性工作时请注意。",
+  "disease_edu": "",
+  "med_forbid": "",
+  "med_caution": "",
+  "med_food": "",
+  "med_disease": "",
+  "t_getup": 6,
+  "t_breakfast": 7,
+  "t_lunch": 12,
+  "t_supper": 18,
+  "t_sleep": 22,
+  "med_list": [
+    {
+      "med_time": "7:00",
+      "med_name": "一二三四五六七八九十一二三四五六七八九",
+      "med_dosage": "1g",
+      "med_spec": "0.2mg",
+      "med_unit": "粒",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "6:00",
+      "med_name": "丙酸氟替卡松吸入气雾剂",
+      "med_dosage": "3g",
+      "med_spec": "125ug",
+      "med_unit": "吸",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "11:00",
+      "med_name": "丙酸氟替卡松吸入气雾剂",
+      "med_dosage": "3g",
+      "med_spec": "125ug",
+      "med_unit": "吸",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "17:00",
+      "med_name": "丙酸氟替卡松吸入气雾剂",
+      "med_dosage": "3g",
+      "med_spec": "125ug",
+      "med_unit": "吸",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "21:00",
+      "med_name": "丙酸氟替卡松吸入气雾剂",
+      "med_dosage": "3g",
+      "med_spec": "125ug",
+      "med_unit": "吸",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "6:00",
+      "med_name": "吸入用异丙托溴铵溶液",
+      "med_dosage": "2g",
+      "med_spec": "2ml",
+      "med_unit": "吸",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "11:00",
+      "med_name": "吸入用异丙托溴铵溶液",
+      "med_dosage": "2g",
+      "med_spec": "2ml",
+      "med_unit": "吸",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "17:00",
+      "med_name": "吸入用异丙托溴铵溶液",
+      "med_dosage": "2g",
+      "med_spec": "2ml",
+      "med_unit": "吸",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "21:00",
+      "med_name": "吸入用异丙托溴铵溶液",
+      "med_dosage": "2g",
+      "med_spec": "2ml",
+      "med_unit": "吸",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "21:00",
+      "med_name": "佐匹克隆片",
+      "med_dosage": "3g",
+      "med_spec": "7.5mg",
+      "med_unit": "片",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "7:00",
+      "med_name": "碳酸钙D3咀嚼片(Ⅱ)",
+      "med_dosage": "3g",
+      "med_spec": "0.6g",
+      "med_unit": "片",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "19:00",
+      "med_name": "碳酸钙D3咀嚼片(Ⅱ)",
+      "med_dosage": "3g",
+      "med_spec": "0.6g",
+      "med_unit": "片",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "6:00",
+      "med_name": "恩他卡朋双多巴片(Ⅱ)",
+      "med_dosage": "2g",
+      "med_spec": "1片",
+      "med_unit": "片",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "11:00",
+      "med_name": "恩他卡朋双多巴片(Ⅱ)",
+      "med_dosage": "2g",
+      "med_spec": "1片",
+      "med_unit": "片",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "17:00",
+      "med_name": "恩他卡朋双多巴片(Ⅱ)",
+      "med_dosage": "2g",
+      "med_spec": "1片",
+      "med_unit": "片",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "21:00",
+      "med_name": "恩他卡朋双多巴片(Ⅱ)",
+      "med_dosage": "2g",
+      "med_spec": "1片",
+      "med_unit": "片",
+      "med_mode": "口服"
+    }
+  ]
+}

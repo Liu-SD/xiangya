@@ -2,10 +2,11 @@
     <div>
       <div class="info">
           {% for med_name, med_spec, med_dosage, med_mode in info %}
-          <div class="layui-row" style="height: 18px;">
-              <div class="layui-col-xs8"><b>{{med_name}}</b></div>
+          <div class="layui-row">
+              <!-- HARDCODE: 这里weasyprint从html转pdf时，精度问题导致这一排会换行，所以在templates/layui/css/layui.css里面将layui-col-xs7的width从58.33333333%改成了58% -->
+              <div class="layui-col-xs7"><b>{{med_name}}</b></div>
               <div class="layui-col-xs2">{{med_spec}}</div>
-              <div class="layui-col-xs1"><b>{{med_dosage}}</b></div>
+              <div class="layui-col-xs2">&nbsp;&nbsp;&nbsp;<b>{{med_dosage}}</b></div>
               <div class="layui-col-xs1">{{med_mode}}</div>
           </div>
           {% endfor %}

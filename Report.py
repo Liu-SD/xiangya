@@ -97,6 +97,7 @@ def json2pdf(json_data, ip, port):
     for med_item in json_data['med_list']:
         index = med_item['med_time']
         index = datetime.datetime.strptime(index, "%H:%M")
+        # 根据用药时间和作息时间判断timestamp
         ts = time_to_timestamp(index, t_getup, t_breakfast, t_lunch, t_supper, t_sleep)
         index = index.strftime("%H:%M")
 
@@ -131,6 +132,7 @@ def json2pdf(json_data, ip, port):
         append_html = templates.template('append_li.html').render(append_html = li_html_append)
 
     educations = []
+    # educations = [(项目名, 项目内容), (项目名, 项目内容), (项目名, 项目内容)...]
     if 'user_edu' in json_data and json_data['user_edu'] != "":
         educations.append(('患者教育', json_data['user_edu'].replace("\r", "").strip("\n").replace("\n", "<br>")))
     if 'disease_edu' in json_data and json_data['disease_edu'] != "":

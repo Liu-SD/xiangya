@@ -8,8 +8,8 @@
     <title>用药指导单</title>
 
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
-    <link rel="stylesheet" href="/home/liu/xiangya/templates/style.css">
     <link rel="stylesheet" href="/home/liu/xiangya/templates/layui/css/layui.css">
+    <link rel="stylesheet" href="/home/liu/xiangya/templates/style.css">
 </head>
 
 
@@ -83,8 +83,8 @@
 
         <div class="layui-row row_margin" >
             <div class="layui-col-xs12">
-                <p style="margin-left: 25px;">推荐用药时间</p>
-                <div class="outlierbox" style="height: 600px;">
+                <p style="text-align: center; font-size: 20px;">推荐用药时间</p>
+                <div class="outlierbox" style="height: 650px;">
                     <!-- style="margin: 10px 10px 10px 20px;" -->
 
                     <div class="layui-row">
@@ -126,7 +126,7 @@
 
         <div class="layui-row">
             <div class="layui-col-xs12">
-                <p style="margin-left: 25px;">用药注意事项</p>
+                <p style="text-align: center; font-size: 20px">用药注意事项</p>
                 <div class="outlierbox" style="height: 700px;font-size: 18.7px;">
                     {% for key, value in educations%}
                     <p>{{key}}</p>
@@ -138,13 +138,14 @@
         </div>
 
         <div class="layui-row row_margin">
-            <div class="layui-col-xs6">
-                <div class="layui-form-item" style="padding-right: 40px;">
+            <div class="layui-col-xs6" style="text-align: center;">
+                医生签字：_____________
+                <!-- <div class="layui-form-item" style="padding-right: 40px;">
                     <label class="layui-form-label">医生签字</label>
                     <div class="layui-input-block">
                         <input type="text" name="section" autocomplete="off" class="layui-input">
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="layui-col-xs6" style="text-align:center;">
                 <div style="padding: 0px 90px;">

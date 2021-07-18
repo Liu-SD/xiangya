@@ -1,16 +1,18 @@
 {
+  "code": "200",
+  "msg": "Test Msg",
   "hospital": "中南大学湘雅医院",
-  "clinic_id": "0009131453",
-  "section": "神经内科",
-  "date": "020-08-11",
-  "time": "15:33",
-  "name": "杨菊香",
-  "gender": "女",
-  "birthday": "1961-07-25",
-  "age": "59岁",
-  "diagnosis": "帕金森氏病?",
-  "doctor": "王俊峙",
-  "user_edu": "盐酸坦索罗辛缓释胶囊\r\n1.遵医嘱用药。饭后30分钟，每天同一时间服用本药。\n2.快速变换姿势须注意，较易产生晕眩之不适。\n3.有可能出现眩晕等，因此从事高空作业、汽车驾驶等伴有危险性工作时请注意。",
+  "clinic_id": "0004899968",
+  "section": "专家门诊",
+  "date": "2021-01-05",
+  "time": "15:31",
+  "name": "陈钰",
+  "gender": "男",
+  "birthday": "1982-02-07",
+  "age": "29岁",
+  "diagnosis": "慢性肾炎，遗传肾炎",
+  "doctor": "肖湘成",
+  "user_edu": "盐酸贝那普利片\r\n1.驾驶和操纵机器时要注意。\r\n\n2.避免补钾及含钾的食盐替代品的摄入。\r\n非布司他片\r\n1.请遵医嘱用药。\r\n\n2.可随餐或空腹（饭前1小时或饭后2小时）服用。\r\n大黄碳酸氢钠片\r\n1.请依照医师的指示，请勿擅自停药或更改剂量。\n\r\n2.尽可能保持每日于相同时间服药。\r\n\n3.用药后2小时内请勿予以铁剂。\r\n\n4.若您计划(已)怀孕、哺乳，请告知您的医(药)师。\r\n\n6.若您正在接受低盐饮食，请告知您的医(药)师\r\n阿莫西林克拉维酸钾(4:1)干混悬剂\r\n1.凉开水摇匀，静置5分钟使其充分溶解后服用。\n2.餐前或餐后服药均可。\r\n包醛氧淀粉胶囊\r\n1.饭后用温开水送服。低蛋白饮食将有助于提高疗效。\n\r\n2.药品内容物受潮发霉后勿服用。\r\n\n3.对本品过敏者禁用。\n\r\n4.出现任何不适请立即就医。\n\n\r\n苯扎贝特片\r\n1.可在饭后或与饭同服。\n\r\n2.不可自行调整剂量或增加服药次数。\r\n血脂康胶囊\r\n1.早晚饭后或晚饭后服用。或遵医嘱。\n\r\n2.饮食宜清淡。\r\n非布司他片\r\n1.请遵医嘱用药。\r\n\n2.可随餐或空腹（饭前1小时或饭后2小时）服用。\r\n",
   "disease_edu": "",
   "med_forbid": "",
   "med_caution": "",
@@ -24,129 +26,129 @@
   "med_list": [
     {
       "med_time": "7:00",
-      "med_name": "一二三四五六七八九十一二三四五六",
-      "med_dosage": "1g",
-      "med_spec": "0.2mg",
-      "med_unit": "粒",
-      "med_mode": "口服"
-    },
-    {
-      "med_time": "6:00",
-      "med_name": "丙酸氟替卡松吸入气雾剂",
-      "med_dosage": "3g",
-      "med_spec": "125ug",
-      "med_unit": "吸",
-      "med_mode": "口服"
-    },
-    {
-      "med_time": "11:00",
-      "med_name": "丙酸氟替卡松吸入气雾剂",
-      "med_dosage": "3g",
-      "med_spec": "125ug",
-      "med_unit": "吸",
+      "med_name": "盐酸贝那普利片",
+      "med_dosage": "1",
+      "med_spec": "10mg",
+      "med_unit": "片",
       "med_mode": "口服"
     },
     {
       "med_time": "17:00",
-      "med_name": "丙酸氟替卡松吸入气雾剂",
-      "med_dosage": "3g",
-      "med_spec": "125ug",
-      "med_unit": "吸",
-      "med_mode": "口服"
-    },
-    {
-      "med_time": "21:00",
-      "med_name": "丙酸氟替卡松吸入气雾剂",
-      "med_dosage": "3g",
-      "med_spec": "125ug",
-      "med_unit": "吸",
+      "med_name": "盐酸贝那普利片",
+      "med_dosage": "1",
+      "med_spec": "10mg",
+      "med_unit": "片",
       "med_mode": "口服"
     },
     {
       "med_time": "6:00",
-      "med_name": "吸入用异丙托溴铵溶液",
-      "med_dosage": "2g",
-      "med_spec": "2ml",
-      "med_unit": "吸",
+      "med_name": "非布司他片",
+      "med_dosage": "2",
+      "med_spec": "40mg",
+      "med_unit": "片",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "6:00",
+      "med_name": "大黄碳酸氢钠片",
+      "med_dosage": "4",
+      "med_spec": "0.3g",
+      "med_unit": "片",
       "med_mode": "口服"
     },
     {
       "med_time": "11:00",
-      "med_name": "吸入用异丙托溴铵溶液",
-      "med_dosage": "2g",
-      "med_spec": "2ml",
-      "med_unit": "吸",
+      "med_name": "大黄碳酸氢钠片",
+      "med_dosage": "4",
+      "med_spec": "0.3g",
+      "med_unit": "片",
       "med_mode": "口服"
     },
     {
       "med_time": "17:00",
-      "med_name": "吸入用异丙托溴铵溶液",
-      "med_dosage": "2g",
-      "med_spec": "2ml",
-      "med_unit": "吸",
-      "med_mode": "口服"
-    },
-    {
-      "med_time": "21:00",
-      "med_name": "吸入用异丙托溴铵溶液",
-      "med_dosage": "2g",
-      "med_spec": "2ml",
-      "med_unit": "吸",
-      "med_mode": "口服"
-    },
-    {
-      "med_time": "21:00",
-      "med_name": "佐匹克隆片",
-      "med_dosage": "3g",
-      "med_spec": "7.5mg",
+      "med_name": "大黄碳酸氢钠片",
+      "med_dosage": "4",
+      "med_spec": "0.3g",
       "med_unit": "片",
       "med_mode": "口服"
     },
     {
       "med_time": "7:00",
-      "med_name": "碳酸钙D3咀嚼片(Ⅱ)",
-      "med_dosage": "3g",
-      "med_spec": "0.6g",
-      "med_unit": "片",
+      "med_name": "阿莫西林克拉维酸钾(4:1)干混悬剂",
+      "med_dosage": "1",
+      "med_spec": "1袋",
+      "med_unit": "袋",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "12:00",
+      "med_name": "阿莫西林克拉维酸钾(4:1)干混悬剂",
+      "med_dosage": "1",
+      "med_spec": "1袋",
+      "med_unit": "袋",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "18:00",
+      "med_name": "阿莫西林克拉维酸钾(4:1)干混悬剂",
+      "med_dosage": "1",
+      "med_spec": "1袋",
+      "med_unit": "袋",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "8:00",
+      "med_name": "包醛氧淀粉胶囊",
+      "med_dosage": "2",
+      "med_spec": "0.625g",
+      "med_unit": "粒",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "13:00",
+      "med_name": "包醛氧淀粉胶囊",
+      "med_dosage": "2",
+      "med_spec": "0.625g",
+      "med_unit": "粒",
       "med_mode": "口服"
     },
     {
       "med_time": "19:00",
-      "med_name": "碳酸钙D3咀嚼片(Ⅱ)",
-      "med_dosage": "3g",
-      "med_spec": "0.6g",
+      "med_name": "包醛氧淀粉胶囊",
+      "med_dosage": "2",
+      "med_spec": "0.625g",
+      "med_unit": "粒",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "7:00",
+      "med_name": "苯扎贝特片",
+      "med_dosage": "1",
+      "med_spec": "0.2g",
       "med_unit": "片",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "8:00",
+      "med_name": "血脂康胶囊",
+      "med_dosage": "2",
+      "med_spec": "0.3g",
+      "med_unit": "粒",
+      "med_mode": "口服"
+    },
+    {
+      "med_time": "19:00",
+      "med_name": "血脂康胶囊",
+      "med_dosage": "2",
+      "med_spec": "0.3g",
+      "med_unit": "粒",
       "med_mode": "口服"
     },
     {
       "med_time": "6:00",
-      "med_name": "恩他卡朋双多巴片(Ⅱ)",
-      "med_dosage": "2g",
-      "med_spec": "1片",
-      "med_unit": "片",
-      "med_mode": "口服"
-    },
-    {
-      "med_time": "11:00",
-      "med_name": "恩他卡朋双多巴片(Ⅱ)",
-      "med_dosage": "2g",
-      "med_spec": "1片",
-      "med_unit": "片",
-      "med_mode": "口服"
-    },
-    {
-      "med_time": "17:00",
-      "med_name": "恩他卡朋双多巴片(Ⅱ)",
-      "med_dosage": "2g",
-      "med_spec": "1片",
-      "med_unit": "片",
-      "med_mode": "口服"
-    },
-    {
-      "med_time": "21:00",
-      "med_name": "恩他卡朋双多巴片(Ⅱ)",
-      "med_dosage": "2g",
-      "med_spec": "1片",
+      "med_name": "非布司他片",
+      "med_dosage": "1",
+      "med_spec": "40mg",
       "med_unit": "片",
       "med_mode": "口服"
     }

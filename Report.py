@@ -113,7 +113,7 @@ def json2pdf(json_data, ip, port):
     dic = sort_key(dic)
 
     sum_t = 1
-    threshold = 27
+    threshold = 28
     li_html_append = ""
     # 判断条目的数量，超过一定内容，就划分为两部分
     for k,(v, ts) in dic.items():
@@ -123,9 +123,9 @@ def json2pdf(json_data, ip, port):
             li_html = li_html + templates.template('li.html').render(time= k, info = v, timestamp= ts)
         else:
             li_html_append = li_html_append + templates.template('li.html').render(time= k, info = v, timestamp= ts)
-        sum_t += dic_count[k] + 2
+        sum_t += dic_count[k] + 1.5
 
-    sum_t -= 2
+    sum_t -= 1.5
     append_html = ""
     # if sum_t > threshold:
     if li_html_append != "":
@@ -134,17 +134,17 @@ def json2pdf(json_data, ip, port):
     educations = []
     # educations = [(项目名, 项目内容), (项目名, 项目内容), (项目名, 项目内容)...]
     if 'user_edu' in json_data and json_data['user_edu'] != "":
-        educations.append(('患者教育', json_data['user_edu'].replace("\r", "").strip("\n").replace("\n", "<br>")))
+        educations.append(('患者教育', json_data['user_edu'].strip("\n").replace("\r\n", "<br>").replace("\n", "")))
     if 'disease_edu' in json_data and json_data['disease_edu'] != "":
-        educations.append(('疾病教育', json_data['disease_edu'].replace("\r", "").strip("\n").replace("\n", "<br>")))
+        educations.append(('疾病教育', json_data['disease_edu'].strip("\n").replace("\r\n", "<br>").replace("\n", "")))
     if 'med_forbid' in json_data and json_data['med_forbid'] != "":
-        educations.append(('禁忌', json_data['med_forbid'].replace("\r", "").strip("\n").replace("\n", "<br>")))
+        educations.append(('禁忌', json_data['med_forbid'].strip("\n").replace("\r\n", "<br>").replace("\n", "")))
     if 'med_caution' in json_data and json_data['med_caution'] != "":
-        educations.append(('注意事项', json_data['med_caution'].replace("\r", "").strip("\n").replace("\n", "<br>")))
+        educations.append(('注意事项', json_data['med_caution'].strip("\n").replace("\r\n", "<br>").replace("\n", "")))
     if 'med_food' in json_data and json_data['med_food'] != "":
-        educations.append(('食物相互作用', json_data['med_food'].replace("\r", "").strip("\n").replace("\n", "<br>")))
+        educations.append(('食物相互作用', json_data['med_food'].strip("\n").replace("\r\n", "<br>").replace("\n", "")))
     if 'med_disease' in json_data and json_data['med_disease'] != "":
-        educations.append(('疾病相互作用', json_data['med_disease'].replace("\r", "").strip("\n").replace("\n", "<br>")))
+        educations.append(('疾病相互作用', json_data['med_disease'].strip("\n").replace("\r\n", "<br>").replace("\n", "")))
 
 
     file_name = '%s.pdf' %  str(uuid.uuid4())

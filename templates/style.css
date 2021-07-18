@@ -44,7 +44,7 @@
 
 /* 这个是让内容往下移动，也就是让这些之间有间隔的设置 */
 .container ul li:not(:first-child) {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .container ul li > span {
